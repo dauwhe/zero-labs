@@ -1,7 +1,7 @@
-# Glazou Labs https://dauwhe.github.io/glazou-labs/
-###a toy digital reading system
+# Zero Labs https://dauwhe.github.io/zero-labs/
+###A toy digital reading system for EPUB Zero
 
-Can the web platform provide a great reading experience for publications? Can [web application manifests](https://www.w3.org/TR/appmanifest/) and [service workers](https://w3c.github.io/ServiceWorker/) more easily implement the functionality of dedicated reading apps? Acme Labs is an experimental implementation of a browser-friendly ebook format [BFF](https://github.com/dauwhe/epub31-bff), and aims to explore some of the ideas of [(portable) web publications](https://github.com/w3c/dpub-pwp-ucr). 
+Can the web platform provide a great reading experience for publications? Can [web application manifests](https://www.w3.org/TR/appmanifest/) and [service workers](https://w3c.github.io/ServiceWorker/) more easily implement the functionality of dedicated reading apps? Zero Labs is an experimental implementation of EPUB Zero.
 
 ## Goals
 
@@ -9,18 +9,18 @@ Can the web platform provide a great reading experience for publications? Can [w
 
 2. The publications themselves should not need any scripts to function.
 
-3. The publications should work offline.
+3. The publications should work offline (in progress).
 
-4. It should be possible to save publications to a local filesystem.
+4. It should be possible to save publications to a local filesystem (in progress).
 
 ## Publications
 
-Each publication is in a folder. The folder contains a `index.html` file
+Each publication is in a folder. The folder contains a `index.html` file with a `nav` element which defines the default reading order, as the `spine` does in EPUB. 
+
 ## Reading System
 
-The reading system is the `main.html` page. Book content is displayed in an iframe. Navigation between files is based on reading the manifest.
+The reading system is the `main.html` page. Book content is displayed in an iframe. Navigation between files is based on reading the first `nav` element in `index.html`.
 
-The service worker caches files listed in the manifest when the "save" button is clicked. The "zip" button downloads a zip of the publication. The highly experimental "package" button downloads a package based on the W3C TAG [Packaging on the Web](https://w3ctag.github.io/packaging-on-the-web/) draft, as extended by [Dmitry Titov](https://github.com/dimich-g/webpackage/blob/master/README.md). 
 
 ## Warning
 
@@ -44,3 +44,5 @@ $ eslint kroner.js # prior to committing changes
 ## Acknowledgments
 
 [Jake Archibald](https://jakearchibald.github.io/ebook-demo/publisher-site/readme/) wrote the original service worker (`kroner.js`) and `page.js` files. 
+
+
