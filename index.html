@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Bookstore</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+<h1>Glazou Labs</h1>
+
+
+<ul>
+
+<li><a href="main.html?manifest=MobyDick/index.html"><img src="covers/moby-dick-book-cover.jpg" height="40" alt="Moby Dick Book Cover"/>Moby-Dick • Herman Melville</a></li>
+
+
+
+
+<li><a href="main.html?manifest=Bartleby/index.html">
+<img src="covers/Bartleby.jpg" height="40" alt="Bartleby Book Cover"/>Bartleby, The Scrivener • Herman Melville
+</a></li>
+
+<li><a href="main.html?manifest=Mott/index.html"><img src="covers/mott.jpg" height="40" alt="Lucretia Mott Book Cover"/>Discourse on Woman • Lucretia Mott</a>
+</li>
+
+<li><a href="main.html?manifest=Lighthouse/index.html">
+<td><img src="covers/lighthouse.jpg" height="40" alt="To the Lighthouse Book Cover"/>To the Lighthouse • Virginia Woolf</a>
+</li>
+
+<li><a href="main.html?manifest=Orlando/index.html">
+<img src="covers/orlando.jpg" height="40" alt="Orlando Book Cover"/>
+Orlando • Virginia Woolf</td>
+</a>
+</li>
+
+<li>
+<a href="main.html?manifest=BooksInBrowsers/index.html">
+<img src="covers/BiB.jpg" height="40" alt="Books in Browsers Image"/>
+A Bag Full of Stories • Dave Cramer</a>
+</li>
+
+<li>
+<a href="main.html?manifest=page-blanche/index.html">
+<img src="covers/pageblanche.jpg" height="40" alt="Page Blanche Cover"/>La Page Blanche • Boulet &amp; Pénélope Bagieu</a>
+</li>
+
+
+<li>
+<a href="main.html?manifest=sous-le-vent/index.html">
+<img src="covers/souslevent.jpg" height="40" alt="Sous le Vent Cover"/>Sous Le Vent • Jean-Bernard Pouy &amp; Joe G. Pinelli</a>
+</li>
+
+
+<li>
+<a href="main.html?manifest=Biology/index.html">
+<img src="covers/biology.jpg" height="40" alt="Biology Cover"/>Biology</a>
+</li>
+
+
+
+
+</table>
+
+
+<p><i><a href="https://jakearchibald.github.io/ebook-demo/publisher-site/readme/">Service Worker</a> by <a href="https://twitter.com/jaffathecake">@jaffathecake</a></i>, although I’ve now ruined it.</p>
+
+
+<section>
+<h1>What’s all this, then?</h1>
+<p>This is another experiment along the lines of PWP, BFF, or EPUB Zero. The goal was to provide an environment for reading books, where the content itself was as simple as possible. There’s no JavaScript in the books; information about the book is in a web application manifest style extended with a “spine” and other “resources.” The book is displayed in an iframe. The previous/next buttons read from the manifest. A service worker allows offline reading, and can download the book as a zip file. Soon I hope to be able to package as EPUB3 as well. In the absence of a framework that understands the manifest, point to the <code>index.html</code> file of each book to find ordinary navigation, etc.</p>
+<p>What have I learned? Creating zips from a cache is tricky. The one hard problem in computer science is paths. Having a list of the components of a publication is <i>really</i> useful.</p>
+
+<p>Yes, this is really buggy, mostly because I don’t know JS.</p>
+
+<aside>The content is paginated in Safari desktop, Chrome, and Opera 12.16 due to the glory of <code>overflow: paged-x</code>.</aside>
+
+</section>
+
+<section>
+<h1>convenience links to bug test cases</h1>
+
+<ul>
+
+<li><a href="bugs/overflow-paged.html">paged overflow outside iframe</a></li>
+<li><a href="bugs/iframe.html">paged overflow inside iframe</a></li>
+<li><a href="https://bugs.webkit.org/show_bug.cgi?id=165304">actual webkit bug</a></li>
+
+</ul>
+
+
+
+
+</body>
+</html>

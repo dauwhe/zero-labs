@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Book</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+<main> 
+<div id="wrapper">
+
+<form method="get" action="index.html">
+    <button type="submit">Library</button>
+</form>
+
+
+
+<!-- <input type="button" value="Begin Reading" id="begin" /> -->
+
+<div id="page-controls"></div>
+<input type="button" value="TOC" id="toc" />
+<input type="button" value="Night" id="night" />
+
+<input type="button" value="+" id="bigger" />
+<input type="button" value="-" id="smaller" />
+
+<input type="button" value="Previous" id="decrement" />
+
+<input type="button" value="Next" id="increment" />
+
+
+
+</div>
+<div class="iframe-container">
+<iframe id="pub" name="book-frame"></iframe>
+</div>
+</main> 
+
+
+<script src="glazou.js"></script>
+<script src="page.js"></script>
+</body>
+</html>

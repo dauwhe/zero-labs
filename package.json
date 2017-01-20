@@ -1,0 +1,25 @@
+{
+  "name": "acme-labs",
+  "version": "1.0.0",
+  "description": "bff reading system",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dauwhe/acme-labs.git"
+  },
+  "keywords": [
+    "epub",
+    "pwp",
+    "bff",
+    "packages"
+  ],
+  "author": "Dave Cramer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dauwhe/acme-labs/issues"
+  },
+  "homepage": "https://github.com/dauwhe/acme-labs#readme"
+}

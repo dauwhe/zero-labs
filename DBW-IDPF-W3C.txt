@@ -1,0 +1,59 @@
+on stage: Garth, Georger, Kroner, BillM, Karen, BillK, Rick Johnson, Liisa, Leslie
+
+Garth: this has gone on for most of a year
+... anounced in April
+... meeting in May at BEA
+
+... merger should be final in 1.5 weeks
+
+... lots of companys offering IP, Google's patent commitment covers all of the stuff garth did with various compaies
+
+
+George: this is great for publishing
+... tech alignment between idpf and w3c
+... DPUB formed in 2013
+... same chairs for epub and dpub
+... 3.1 is something you can use now, and bet on
+... maintained in CG in W3C
+... lots more publishing presence in w3c
+... lots more resources in w3c
+
+BillM: 
+w3c mission lead web to full potential
+we can lead publishing to full potential
+common technology, commmon vision
+
+long term strategy
+continue to promote epub as packaged 
+and 
+work for future convergence for native packaged offline/online
+
+========
+
+Steve P
+thanks for the update
+comments then q
+i was disappointed that the word "book" didn't come
+
+
+Fran T.
+
+thanks BillM on engaging with him last night
+I was wrong on a few things
+I had also not known everything that was in the final MOU
+I had only seen a draft
+
+portability of epub files is important
+the ability to offline
+to sell as individual files
+
+there are risks that w3c is of the web, and doesn't deal with offline
+we're one small grain of sand
+
+how can we be sure that this offline process will continue
+
+
+
+
+
+
