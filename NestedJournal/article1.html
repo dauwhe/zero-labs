@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html 📖 lang="en">
+<head>
+  <title>Journal of Cetacean Mountain Studies, Volume 1 Number 1</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    nav ol {
+      list-style-type: none;
+      margin-left: 0;
+      padding-left: 0;
+      font-size: .8em;
+    }
+    
+    nav ol li {
+      margin-bottom: .2em;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: #777;
+    }
+    
+    .Contents-rw h1 {
+      font-size: 1em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+    
+    #nav2 { display: none; }
+    
+    .cover, details {
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
+  
+  
+
+
+
+  <link rel="import"  href="article1sub1.html">
+
+</head>
+<body>
+  <main>
+      <p>Main content, Article 1<p>
+  </main>
+
+  <div class="fallback">
+    <details>
+      <summary>Table of Contents</summary>
+        <nav role="doc-toc">
+          <ol>
+            <li><a target="_self" href="article1sub1.html">sub1</a></li>
+         </ol>
+       </nav>
+     </details>
+  </div>
+  <script>
+    function supportsImports() {
+      return 'import' in document.createElement('link');
+    }
+
+    if (supportsImports()) {
+      document.getElementsByClassName('fallback')[0].style.display = 'none';  // hide fallback if imports supported
+      var links = document.querySelectorAll('link[rel="import"]');
+      for (var link of links) {
+        var content = link.import;
+        var el = content.querySelector('main');
+          console.log(el);
+        document.body.appendChild(el);
+      
+       }
+    } else {
+    document.getElementsByClassName('fallback')[0].style.display = 'block';  // show fallback if imports not supported
+    }
+  </script>
+</body>
+</html>
