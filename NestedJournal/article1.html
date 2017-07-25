@@ -34,12 +34,9 @@
       text-align: center;
     }
   </style>
-  
-  
-
-
 
   <link rel="import"  href="article1sub1.html">
+<link rel="import"  href="article1sub2.html">
 
 </head>
 <body>
@@ -53,28 +50,33 @@
         <nav role="doc-toc">
           <ol>
             <li><a target="_self" href="article1sub1.html">sub1</a></li>
+            <li><a target="_self" href="article1sub2.html">sub2</a></li>
+
          </ol>
        </nav>
      </details>
   </div>
-  <script>
-    function supportsImports() {
-      return 'import' in document.createElement('link');
-    }
+  
+<script>
+document.getElementsByClassName('fallback')[0].style.display = 'none';
 
-    if (supportsImports()) {
-      document.getElementsByClassName('fallback')[0].style.display = 'none';  // hide fallback if imports supported
-      var links = document.querySelectorAll('link[rel="import"]');
+  var importDoc = document.currentScript.ownerDocument;
+  
+
+    
+      var links = importDoc.querySelectorAll('link[rel="import"]');
       for (var link of links) {
         var content = link.import;
+ 
         var el = content.querySelector('main');
-          console.log(el);
         document.body.appendChild(el);
-      
        }
-    } else {
-    document.getElementsByClassName('fallback')[0].style.display = 'block';  // show fallback if imports not supported
-    }
-  </script>
+       </script>
+  
+ 
+
+
 </body>
+
+
 </html>

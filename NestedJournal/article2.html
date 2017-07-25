@@ -34,21 +34,15 @@
       text-align: center;
     }
   </style>
-  
 
 
 
-
-  <link rel="import"  href="article1.html">
-    <link rel="import"  href="article2.html">
-
-
+<link rel="import"  href="article2sub1.html">
+<link rel="import"  href="article2sub2.html">
 </head>
 <body>
-
-
   <main>
-      <p>Main content, Journal.html</p>
+      <p>Main content, Article 2<p>
   </main>
 
   <div class="fallback">
@@ -56,34 +50,46 @@
       <summary>Table of Contents</summary>
         <nav role="doc-toc">
           <ol>
-            <li><a target="_self" href="article1.html">Mount Moby-Dick (Selkirks)</a></li>
-            <li><a target="_self" href="article2.html">Moby-Dick (Yosemite)</a></li>
+            <li><a target="_self" href="article2sub1.html">2sub1</a></li>
+            <li><a target="_self" href="article2sub2.html">2sub2</a></li>
+
          </ol>
        </nav>
      </details>
   </div>
   
-  <script>
-
-
-      document.getElementsByClassName('fallback')[0].style.display = 'none';
+<script>
+document.getElementsByClassName('fallback')[0].style.display = 'none';
 
   var importDoc = document.currentScript.ownerDocument;
 
+    
       var links = importDoc.querySelectorAll('link[rel="import"]');
       for (var link of links) {
         var content = link.import;
+ 
         var el = content.querySelector('main');
-        importDoc.body.appendChild(el);
+        document.body.appendChild(el);
        }
-
-
        </script>
+  
+  <!-- 
+ <script>  
+  // thisDoc refers to the "importee", which is blog-post.html
+  var thisDoc = document.currentScript.ownerDocument;
+
+  // thatDoc refers to the "importer", which is index.html
+  var thatDoc = document;
+
+  // grab the contents of the #blog-post from this document
+  // and append it to the importing document.
+  var content = thisDoc.querySelector('main');
+  thatDoc.body.appendChild(thatDoc.importNode(content, true));
+</script>  
+ -->
+
 
 </body>
-
-
-
 
 
 </html>
