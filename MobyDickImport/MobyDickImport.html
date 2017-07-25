@@ -37,7 +37,7 @@
   
   
 
-<script>
+<script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "Book",
@@ -150,13 +150,20 @@
     }
 
     if (supportsImports()) {
-      document.getElementsByClassName('fallback')[0].style.display = 'none';  // hide fallback if imports supported
-      var links = document.querySelectorAll('link[rel="import"]');
+
+document.getElementsByClassName('fallback')[0].style.display = 'none';
+
+  var importDoc = document.currentScript.ownerDocument;
+  
+    
+      var links = importDoc.querySelectorAll('link[rel="import"]');
       for (var link of links) {
         var content = link.import;
+ 
         var el = content.querySelector('div.galley-rw');
         document.body.appendChild(el);
        }
+
     } else {
     document.getElementsByClassName('fallback')[0].style.display = 'block';  // show fallback if imports not supported
     }
