@@ -3,6 +3,8 @@
 <head>
   <title>Moby-Dick</title>
   <meta charset="utf-8">
+  
+  <script src="webcomponents-hi.js"></script>
   <style type="text/css">
     nav ol {
       list-style-type: none;
@@ -89,6 +91,8 @@
 }
 </script>
 
+
+
   
 </head>
 <body>
@@ -104,14 +108,15 @@
         <nav role="doc-toc">
           <ol>
             <li><a href="html/title-page.html">Moby-Dick</a></li>
-            <li><a href="html/copyright.html"></a></li>
-            <li><a href="html/introduction.html">Etymology.</a></li>
+            <li><a href="html/copyright.html">Copyright</a></li>
+                     <li><a href="html/introduction.html">Etymology.</a></li>
             <li><a href="html/epigraph.html">Extracts</a></li>
             <li><a href="html/c001.html#c001">Loomings</a></li>
             <li><a href="html/c002.html#c002">The Carpet-Bag</a></li>
             <li><a href="html/c003.html#c003">The Spouter-Inn</a></li>
             <li><a href="html/c004.html#c004">The Counterpane</a></li>
-            <li><a href="html/c005.html#c005">Breakfast</a></li>
+
+<li><a href="html/c005.html#c005">Breakfast</a></li>
             <li><a href="html/c006.html#c006">The Street</a></li>
             <li><a href="html/c007.html#c007">The Chapel</a></li>
             <li><a href="html/c008.html#c008">The Pulpit</a></li>
@@ -121,20 +126,37 @@
             <li><a href="html/c134.html#c134">The Chase—Second Day</a></li>
             <li><a href="html/c135.html#c135">The Chase.—Third Day</a></li>
             <li><a href="html/c136.html#c136">Epilogue</a></li>
+
          </ol>
        </nav>
      </details>
  </main>
   <script>
-    function supportsImports() {
-      return 'import' in document.createElement('link');
-    }
+  
 
-    if (supportsImports()) {
+  
+        function handleLoad(e) {
+    console.log('Loaded import: ' + e.target.href);
+    
+    var content = e.import;
+    console.log(content);
+     var el = content.querySelector('main');
+            document.body.appendChild(el);
+  }
+  function handleError(e) {
+    console.log('Error loading import: ' + e.target.href);
+  }
+  
+  
+  
+  window.addEventListener('HTMLImportsLoaded', function(e) {
+  
+});
+
+   
 
 
   var importDoc = document.currentScript.ownerDocument;
-  
     
       var spine = importDoc.querySelectorAll('nav[role="doc-toc"] > ol > li > a');
       
@@ -143,35 +165,39 @@
       var link = document.createElement('link');
           link.rel = 'import';
           link.href = spineItem.href;
-          
           document.head.appendChild(link);
+    //      link.import;
           
+    //      link.setAttribute('onload', 'handleLoad(event)');
+     //   link.setAttribute('onerror', 'handleError(event)');
+
           }
-
           
-          var linkList = importDoc.querySelectorAll('link[rel="import"]');
+          // now process them???
           
-          for (var linkItem of linkList) {
-      
-     
           
-          var content = linkItem.import;
-        
-                console.log(content);
-
- 
-       var el = content.querySelector('div.galley-rw');
-     
-       document.body.appendChild(el);
-       }
-
-    } else {
-    
-    alert('what were you thinkin’, bro?');
-    }
-    
-    
+          
+          window.addEventListener('HTMLImportsLoaded', function() {
+  var existingLinks = importDoc.querySelectorAll('link[rel="import"]');
    
+        for (var link of existingLinks) {
+          
+            var content = link.import;
+            console.log(link.import);
+            var el = content.querySelector('main');
+            document.body.appendChild(el);
+
+          
+};
+
+});
+          
+   
+   
+
+        
+     
+
   </script>
 </body>
 </html>

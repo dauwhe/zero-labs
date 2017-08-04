@@ -55,11 +55,14 @@
 <main>
 <div class="galley-rw">
 
-
+<!--
 <div class="cover">
 <img height="300" src="images/moby-dick-book-cover.jpg"/>
-<p><a href="html/c001.html">Begin Reading</a></p>
 </div>
+
+-->
+
+
 
 
 	<details>
@@ -74,6 +77,8 @@
 			<li><a target="_self" href="html/introduction.html">Etymology.</a></li>
 			<li><a target="_self" href="html/epigraph.html">Extracts</a></li>
 			<li><a target="_self" href="html/c001.html">Loomings</a></li>
+						<li><a target="_self" href="html/c001.html#b">Loomings</a></li>
+
 			<li><a target="_self" href="html/c002.html">The Carpet-Bag</a></li>
 			<li><a target="_self" href="html/c003.html">The Spouter-Inn</a></li>
 			<li><a target="_self" href="html/c004.html">The Counterpane</a></li>
@@ -215,6 +220,38 @@
 	</details>
 	
 </div>
+
+<section>
+
+</section>
 </main>
+
+<script>
+var links = document.getElementsByTagName('nav')[0].getElementsByTagName('a');
+
+var myImage = document.querySelector('section');
+
+
+for (link in links) {
+
+fetch(link).then(function(response) {
+  return response.text();
+}).then(function(mySpineItem) {
+  myImage.innerHTML = mySpineItem;
+  console.log(mySpineItem.getElementsByTagName('img'));
+});
+
+}
+
+
+//function uniq(a) {
+ //  return Array.from(new Set(a));
+//}
+
+//console.log(document.getElementsByTagName('img'));
+    
+    </script>
+
+
 </body>
 </html>

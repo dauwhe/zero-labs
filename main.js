@@ -31,10 +31,18 @@ var iframe = document.getElementById('pub')
 document.getElementById("decrement").disabled = true;
 
 // the manifest knows all
-var content = $.getJSON(manifest)
+var content = document.querySelectorAll('nav[role="doc-toc"]')
   .done(function(data) {
     // set title of page to book title
-    document.title = data.name;
+    
+    console.log(content);
+    
+    
+    
+    
+    
+    
+    
     
     
 
