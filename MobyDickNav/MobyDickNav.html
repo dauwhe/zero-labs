@@ -4,6 +4,8 @@
   <title>Moby-Dick</title>
   <meta charset="utf-8">
   
+  <script src="book.js"></script>
+  
   <script src="webcomponents-hi.js"></script>
   <style type="text/css">
     nav ol {
@@ -131,73 +133,6 @@
        </nav>
      </details>
  </main>
-  <script>
-  
-
-  
-        function handleLoad(e) {
-    console.log('Loaded import: ' + e.target.href);
-    
-    var content = e.import;
-    console.log(content);
-     var el = content.querySelector('main');
-            document.body.appendChild(el);
-  }
-  function handleError(e) {
-    console.log('Error loading import: ' + e.target.href);
-  }
-  
-  
-  
-  window.addEventListener('HTMLImportsLoaded', function(e) {
-  
-});
-
-   
-
-
-  var importDoc = document.currentScript.ownerDocument;
-    
-      var spine = importDoc.querySelectorAll('nav[role="doc-toc"] > ol > li > a');
-      
-      for (var spineItem of spine) {
-      
-      var link = document.createElement('link');
-          link.rel = 'import';
-          link.href = spineItem.href;
-          document.head.appendChild(link);
-    //      link.import;
-          
-    //      link.setAttribute('onload', 'handleLoad(event)');
-     //   link.setAttribute('onerror', 'handleError(event)');
-
-          }
-          
-          // now process them???
-          
-          
-          
-          window.addEventListener('HTMLImportsLoaded', function() {
-  var existingLinks = importDoc.querySelectorAll('link[rel="import"]');
-   
-        for (var link of existingLinks) {
-          
-            var content = link.import;
-            console.log(link.import);
-            var el = content.querySelector('main');
-            document.body.appendChild(el);
-
-          
-};
-
-});
-          
-   
-   
-
-        
-     
-
-  </script>
+  <script src="html-import-from-nav.js"></script>
 </body>
 </html>
