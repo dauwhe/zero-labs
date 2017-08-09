@@ -1,16 +1,15 @@
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('v1').then(function(cache) {
+    caches.open('v5').then(function(cache) {
       return cache.addAll([
         'css/mobydick.css',
-        'html/c001.html',
-        'html/c002.html',
-        'html/c003.html',
-        'html/c004.html'
+        'html/c001.html'
       ]);
     })
   );
 });
+
+
 
 self.addEventListener('fetch', function(event) {
   event.respondWith(caches.match(event.request).then(function(response) {
@@ -25,7 +24,7 @@ self.addEventListener('fetch', function(event) {
         // and serve second one
         let responseClone = response.clone();
         
-        caches.open('v1').then(function (cache) {
+        caches.open('v5').then(function (cache) {
           cache.put(event.request, responseClone);
         });
         return response;
@@ -35,3 +34,13 @@ self.addEventListener('fetch', function(event) {
     }
   }));
 });
+
+
+self.addEventListener('message', function (evt) {
+  console.log('postMessage received', evt.data);
+  caches.open('v5').then(function(cache) {
+     return cache.add(evt.data);
+    }
+ );
+  
+})

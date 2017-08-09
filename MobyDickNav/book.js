@@ -18,3 +18,26 @@ if ('serviceWorker' in navigator) {
 }
 
 
+var spine = document.querySelectorAll("nav[role='doc-toc'] a");
+
+var manifestArray = [];
+
+      for (var spineItem of spine) {
+     
+          manifestArray.push(spineItem.href)
+
+
+          };
+
+
+
+
+function sendMessage(message) {
+    navigator.serviceWorker.controller.postMessage(message);
+  };
+
+
+
+
+
+
