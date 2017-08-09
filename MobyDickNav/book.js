@@ -17,27 +17,15 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-
+// create a list of primary publication resources, 
+// which could be sent to the service worker
 var spine = document.querySelectorAll("nav[role='doc-toc'] a");
-
 var manifestArray = [];
-
       for (var spineItem of spine) {
-     
           manifestArray.push(spineItem.href)
-
-
           };
 
-
-
-
+// send a message to a service worker
 function sendMessage(message) {
     navigator.serviceWorker.controller.postMessage(message);
   };
-
-
-
-
-
-
