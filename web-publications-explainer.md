@@ -2,6 +2,29 @@
 
 This is a straw-man proposal to use the HTML ```nav``` element to bind together web resources into a publication. Think of this as commentary on the ongoing work of the W3C Publishing Working Group, as it happens in the [Web Publications Repo](https://www.github.com/w3c/wpub)
 
+## What the WG Thinks so far
+
+The PWG is discussing the idea of an abstract manifest, the set of information necessary for a user agent to process and present a web publication.
+
+### Consensus, such as it is
+
+1. The manifest must identify itself as representing a web publication.
+2. The manifest must provide a list of primary resources, and a default ordering of those resources. 
+3. The manifest must provide a mechanism to associate metadata with the web publication. Any particular piece of metadata is, however, optional.
+4. The manifest should provide the title of the web publication. If a title is absent, a fallback should be provided (details TK).
+5. The manifest should provide a unique identifier for the web publication.
+
+
+### Looking for consensus
+
+1. It (should | must) be possible to locate the manifest from at least one primary resource.
+2. It (should | must) be possible to locate the manifest from any primary resource.
+3. A manifest (should | must) identify secondary resources of the web publication.
+4. A web publication (should | must) have a navigation document.
+5. The manifest must include an explicit locator. 
+
+
+
 ## Definition
 
 A web publication is a collection of web resources, treated as a single work, which meets user expectations of personalization, simplicity, accessibility, ubiquity, and unity:
