@@ -36,11 +36,13 @@ self.addEventListener('fetch', function(event) {
 });
 
 
-self.addEventListener('message', function (evt) {
-  console.log('postMessage received', evt.data);
+self.addEventListener('message', function (event) {
+  console.log('postMessage received', event.data);
+  event.waitUntil(
   caches.open('v5').then(function(cache) {
-     return cache.add(evt.data);
-    }
- );
+     return cache.add('html/c002.html')
+  }));
+});
+
   
-})
+
