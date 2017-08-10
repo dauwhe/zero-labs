@@ -34,7 +34,7 @@ Define the URL of a web publication to be the URL of this “index” document w
 
 ## Examples
 
-See [Moby-Dick](https://dauwhe.github.io/ZeroLabs/MobyDickNav/MobyDickNav.html).
+See [Moby-Dick](https://dauwhe.github.io/zero-labs/MobyDickNav/MobyDickNav.html).
 
 
 ## Experimentation
