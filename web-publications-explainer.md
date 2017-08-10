@@ -1,44 +1,51 @@
-# Web Publications Explainer
+# Web Publications TOC Explainer
 
 This is a straw-man proposal to use the HTML ```nav``` element to bind together web resources into a publication. Think of this as commentary on the ongoing work of the W3C Publishing Working Group, as it happens in the [Web Publications Repo](https://www.github.com/w3c/wpub)
 
-## What the WG Thinks so far
 
-The PWG is discussing the idea of an abstract manifest, the set of information necessary for a user agent to process and present a web publication.
-
-### Consensus, such as it is
-
-1. The manifest must identify itself as representing a web publication.
-2. The manifest must provide a list of primary resources, and a default ordering of those resources. 
-3. The manifest must provide a mechanism to associate metadata with the web publication. Any particular piece of metadata is, however, optional.
-4. The manifest should provide the title of the web publication. If a title is absent, a fallback should be provided (details TK).
-5. The manifest should provide a unique identifier for the web publication.
-
-
-### Looking for consensus
-
-1. It (should | must) be possible to locate the manifest from at least one primary resource.
-2. It (should | must) be possible to locate the manifest from any primary resource.
-3. A manifest (should | must) identify secondary resources of the web publication.
-4. A web publication (should | must) have a navigation document.
-5. The manifest must include an explicit locator. 
-
-
-
-## Definition
+## What is a web publication?
 
 A web publication is a collection of web resources, treated as a single work, which meets user expectations of personalization, simplicity, accessibility, ubiquity, and unity:
 
-1. (controversial!) I can navigate through the publication without clicking a link
-2. If I leave the publication and go back later, the browser remembers where I was
-3. If I search on the page, the scope of the search is the entire web publication
-4. I can always access the table of contents from the current page
-5. The Web publication has a shareable URL
-6. I can read the publication while offline
-7. I can annotate the publication
+1. I can navigate through the publication without clicking a link. (Controversial!)
+2. If I leave the publication and go back later, the browser remembers where I was.
+3. If I search on the page, the scope of the search is the entire web publication.
+4. I can always access the table of contents from the current page.
+5. I can share the Web publication's URL.
+6. I can read the publication while offline.
+7. I can annotate the publication.
 8. I can easily change the font, font size, theme, etc.
 
-## Mechanism
+## The abstract manifest
+
+An abstract manifest is the set of information necessary for a user agent to process and present a web publication.
+
+### Information in the abstract manifest
+
+#### 1. Title
+
+This identifies the title of the web publication, which can be distinct from any titles associated with the constituent resources.
+
+#### 2. Identifier
+
+A unique identifier for the web publication. The identifier chosen will likely differ across use cases—for example, book publishers would likely use ```urn:isbn```. 
+
+#### 3. List of Primary Resources
+
+An abstract manifest must provide a list of primary resources, and the default ordering of those resources. 
+
+#### 4. Metadata
+
+An abstract manifest must provide a way to associate metadata with a web publication. Any particular piece of metadata is, however, optional.
+
+#### 5. “Publication-ness”
+
+An abstract manifest must indicate to a user agent that it represents a web publication. 
+
+
+
+
+## Proposed implementation of the abstract manifest concept
 
 
 How do we bind this collection of resources together? We need a list of the primary resources, with a default order. That's an ordered list of URLs, which can be semantically represented by the HTML ```nav``` element.
@@ -96,6 +103,8 @@ Service workers can allow offline reading of web resources. Script can easily cr
 ## Security
 
 Web publications are based on the [origin](https://tools.ietf.org/html/rfc6454) model of the web. In particular, a resource in a web publication should be same-origin to the index resource, or available to that origin via CORS. 
+
+[To do: Say something intelligent about CSP.]
 
 
 
