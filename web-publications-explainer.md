@@ -13,6 +13,7 @@ A web publication is a collection of web resources, treated as a single work, wh
 5. The Web publication has a shareable URL
 6. I can read the publication while offline
 7. I can annotate the publication
+8. I can easily change the font, font size, theme, etc.
 
 ## Mechanism
 
