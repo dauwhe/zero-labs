@@ -27,11 +27,12 @@ Define the URL of a web publication to be the URL of this “index” document w
 
 1. A web publication must have an “index” resource containing a ```nav``` element.
 2. The primary publication resources must be referenced in this ```nav``` element, in the default order.
-3. The title of the index resource is the title of the web publication. If the title is absent, @dauwhe and @bigbluehat will come after you. 
-4. The URL of the index resource is the URL of the web publication.
-5. Constituent resources should have a ```rel=contents``` link to the index resource.
-6. Constituent resources should have ```rel=prev``` and ```rel=next``` links as appropriate.
-7. All HTML primary resources must have an 📖 attribute on the ```html``` element, to identify the resource as part of a web publication. The attribute may also be serialized as the text string ```book```. 
+3. These URLs must be available (in the CORS sense) to the origin of the index resource. 
+4. The title of the index resource is the title of the web publication. If the title is absent, @dauwhe and @bigbluehat will come after you. 
+5. The URL of the index resource is the URL of the web publication.
+6. Constituent resources should have a ```rel=contents``` link to the index resource.
+7. Constituent resources should have ```rel=prev``` and ```rel=next``` links as appropriate.
+8. All HTML primary resources must have an 📖 attribute on the ```html``` element, to identify the resource as part of a web publication. The attribute may also be serialized as the text string ```book```. 
 
 ## Examples
 
@@ -60,10 +61,20 @@ See [Moby-Dick](https://dauwhe.github.io/zero-labs/MobyDickNav/MobyDickNav.html)
 
 ```
 
+## Accessibility
+
+One reason for focusing on ```nav``` as the glue that holds a publication together is because of the need for a table of contents that is available to humans and assistive technology, and that supports the visual nuance provided by CSS, and the internationalization features of HTML. 
+
 
 ## Offline
 
 Service workers can allow offline reading of web resources. Script can easily create a list of primary resources to pass to a service worker, but obtaining a list of secondary resources is more problematic. This is where we hope for help from browsers, as authoring an exhaustive list of fonts, images, CSS files, etc. is no fun. 
+
+## Security
+
+Web publications are based on the [origin](https://tools.ietf.org/html/rfc6454) model of the web. In particular, a resource in a web publication should be same-origin to the index resource, or available to that origin via CORS. 
+
+
 
 ## Experimentation
 
