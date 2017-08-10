@@ -32,7 +32,7 @@ Define the URL of a web publication to be the URL of this “index” document w
 5. The URL of the index resource is the URL of the web publication.
 6. Constituent resources should have a ```rel=contents``` link to the index resource.
 7. Constituent resources should have ```rel=prev``` and ```rel=next``` links as appropriate.
-8. All HTML primary resources must have an 📖 attribute on the ```html``` element, to identify the resource as part of a web publication. The attribute may also be serialized as the text string ```book```. 
+8. The index resource must have an 📖 attribute on the ```html``` element, to identify it as a web publication. The attribute may also be serialized as the text string ```book```. 
 
 ## Examples
 
@@ -78,7 +78,8 @@ Web publications are based on the [origin](https://tools.ietf.org/html/rfc6454) 
 
 ## Experimentation
 
-1. One way to create a single entity out of multiple HTML documents is to use the now-deprecated HTML Imports. We hope that some similar mechanism will come to the web platform soon, but there is still support (and a polyfill) for HTML imports. Ideally we'd place the imported content in shadow DOM to allow style encapsulation. 
+1. One way to create a single entity out of multiple HTML documents is to use the now-deprecated HTML Imports. We hope that some similar mechanism will come to the web platform soon, but there is still support (and a polyfill) for HTML imports. 
+2. Shadow DOM might be useful for two things. One is encapsulating styles of imported components. It might also [help allow authors](https://tabatkins.github.io/specs/css-shadow-parts/) to expose hooks for readers to personalize publications, while still retaining control of certain critical design elements. 
 
 ## The State of the Art
 
