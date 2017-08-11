@@ -5,9 +5,9 @@ This is a straw-man proposal to use the HTML ```nav``` element to bind together 
 
 ## What is a web publication?
 
-A web publication is a collection of web resources, treated as a single work, which meets user expectations of personalization, simplicity, accessibility, ubiquity, and unity:
+A web publication is a collection of web resources, treated as a single work, which meets user expectations of readability, personalization, simplicity, accessibility, ubiquity, and unity:
 
-1. I can navigate through the publication without clicking a link. (Controversial!)
+1. I can navigate through the publication without clicking links. (Controversial!)
 2. If I leave the publication and go back later, the browser remembers where I was.
 3. If I search on the page, the scope of the search is the entire web publication.
 4. I can always access the table of contents from the current page.
@@ -51,6 +51,17 @@ An abstract manifest must indicate to a user agent that it represents a web publ
 How do we bind this collection of resources together? We need a list of the primary resources, with a default order. That's an ordered list of URLs, which can be semantically represented by the HTML ```nav``` element.
 
 Define the URL of a web publication to be the URL of this “index” document which contains the ```nav```. 
+
+## Motivations
+
+Why HTML? Why ```nav```?
+
+1. Ease of authoring. HTML is the lingua franca of the web. We shouldn't require an author to learn JSON to do something that HTML can do.
+
+2. Accessibility. WCAG requires [multiple ways](https://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-mult-loc) to navigate multi-document web sites. A table of contents is a [primary way](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G64) to provide such navigation, and is available to assistive technology. CSS can help clarify the document structure, or help personalize for users (for example, providing high- or low-contrast options). 
+
+3. Fallback behaviour. A user agent unfamiliar with web publications would have no idea what to do with a JSON file. But a user can point their browser at an HTML file, and the browser can render it. Even if no new features of web publications are implemented in that browser, or shimmed, the user can read the publication. 
+
 
 
 ## Rules
